@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Grid, Typography } from '@mui/material';
+import MyAppBar from './Components/MyAppBar';
+import MyButton from './Components/MyButton';
 
-function App() {
+const App = ()=>{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MyAppBar />
+      <Container>
+        <Grid container spacing={3} justifyContent="center" alignItems="center" style={{ marginTop: '20px' }}>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="h4">Welcome to My App</Typography>
+            <Typography variant="body1">
+              This is a basic example of a responsive layout using Material-UI's Grid system.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <MyButton />
+          </Grid>
+        </Grid>
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
